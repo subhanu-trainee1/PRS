@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <title> Search Patients </title>
+ <style>
+		a
+		{
+			text-decoration:none;
+			color:brown;			
+		}
+		a:hover
+		{
+			color:blue;
+			text-decoration:underline;
+		}
+</style>
+	
+ </head>
+ <body bgcolor="">
+     <form action="PRMS_Servlet" method="post">
+
+		<table width=800 align=center border=0>		
+		<tr>
+         <td><div align=center class=brownhead><h1 style = "color:Blue; text-align:center; margin-top:100px">Search Patients</h1></div><br><br>
+         <table  align="center" cellpadding=5>
+
+		<tr><td> <h4 style = "color:Green"> Enter search Criteria - </h4> </td><td><div id="text" style="visibility:hidden;"></div><input type="text" id="pid" name="pid" style = "width:200px; height:30px" required></td></tr>
+		<tr align=center><td colspan=2>
+		<br />
+		 <input type = "Submit" name = "s1" onclick = "Pidtype()" value = "Search" style = "width:100px; height:30px; color:brown">
+		
+		<button type = "reset" name = "clr" style = "width:100px; height:30px; color:brown"> Clear </button>
+		
+		<button type = "exit" name = "exit" style = "width:100px; height:30px"> <a href = "HomepageV1_1.html"> Back </a> </button>
+        </td>
+		</tr>
+		</table>
+ </form>
+ <Script>
+ function Pidtype()
+			{
+				var valid = document.getElementById("pid");				
+				var x = valid.value.search(/^[A-Za-z0-9\]+$/);
+				if(x == 0)
+				{
+				}
+				else
+				{
+					alert("Enter currect patientId");					
+				}						
+			}
+ </Script>
+</body>
+</html>

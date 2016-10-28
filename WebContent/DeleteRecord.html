@@ -1,0 +1,52 @@
+<DOCTYPE>
+<html>
+	<head>
+	<title> Delete Record </title>	
+	<style>
+		a
+		{
+			text-decoration:none;
+			color:brown;			
+		}
+		a:hover
+		{
+			color:blue;
+			text-decoration:underline;
+		}
+	</style>
+	<script>
+ 	function Pidtype()
+			{
+				var valid = document.getElementById("pidtype");				
+				var x = valid.value.search(/^[A-Za-z0-9\]+$/);
+				if(x != 0)
+				{
+					alert("Enter correct patientId");		
+					return false;
+				}
+								
+			}
+ 	</script>
+	</head>
+</html>
+
+<body>	
+	<h1 style = "color:Blue; text-align:center; margin-top:100px" > Delete Record </h1>
+	<br />
+	<br />
+	<form  action = "PRMS_Servlet" method = "post" style = "text-align:center" onsubmit = "return Pidtype()">		
+		<h4 style = "color:Green"> Enter Patient ID -  		
+			<input type = "text" id = "pidtype" name = "PatientID" style = "width:200px; height:30px" placeholder = "Enter PatientID" required>
+		</h4>
+		<br />
+		<br />
+		<br />
+		<br />
+		<button type = "submit" name = "s1" value = "delete" style = "width:100px; height:30px; color:brown"> Delete Record </button>
+		
+		<button type = "reset" name = "clr" style = "width:100px; height:30px; color:brown"> Clear ID </button>
+		
+		<button type = "exit" name = "exit" style = "width:100px; height:30px"> <a href = "HomepageV1_1.html"> Back </a> </button>
+	</form>		
+</body>
+</html>

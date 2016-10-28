@@ -1,0 +1,401 @@
+<!--Patient registration form using html and css-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Patient Registration form </title>
+		<style>
+			a
+			{
+				text-decoration:none;
+				color:black;				
+			}
+			a:hover
+			{
+				color:blue;
+				text-decoration:underline;
+			}	
+		</style>		
+	</head>
+	
+	<body>				
+			<h3 style = "background-color:lightpink; width:1200px; padding:20px;text-align:center"> Patient Registration </h3>
+			<form method = "post" action = "PRMS_Servlet">
+				<fieldset>
+					<legend> <h4> Your Contact Information </h4> </legend> 					
+						<br />						
+							Relationship:<select name = "relationship">
+												<option> Father </option>
+												<option> Mother </option>
+												<option> Son </option>
+												<option> Daughter </option>
+												<option> GrandFather </option>
+												<option> GrandMother </option>
+												<option> Brother </option>
+												<option> Sister </option>
+												<option> Husband </option>														
+												<option> Wife </option>
+												<option> Other </option>
+											</select>
+							<br />
+							<br />						
+						
+							First Name:	<input type = "text" placeholder = "First Name" name = "firstname" id = "firstname"  onblur = "firstnameFunction()"> 
+							Last Name:  <input type = "text" placeholder = "Last Name" name = "lastname" id = "lastname"  onblur = "lastnameFunction()"> 
+							<br />
+							<br />
+							
+							Patient ID:<input type = "text" placeholder = "Enter Patient ID" name = "patientid" required>
+							<br />
+							<br />
+												
+							Gender: <select name = "gender">
+										<option> Male </option>
+										<option> Female </option>
+										<option> Other </option>
+									</select>
+							<br>
+							<br>						
+									
+							Date Of Birth: <input type = "text" placeholder = "Date/Month/Year" name = "DOB" id = "dob" onblur = "dateFunction()">								
+							<br />
+							<br />
+							
+							Age: <input type = "text" placeholder = "age" name = "age" id = "agelimit" onblur = "ageFunction()" maxlength = "3"> 
+							<br />
+							<br />
+							
+							Marital Status: <select name = "maritalstatus">
+												<option> Single </option>
+												<option> Married </option>
+												<option> Unmarried </option>
+												<option> Widowed </option>
+												<option> Divorced </option>
+												<option> Other </option>
+											</select>
+							<br />
+							<br />
+							
+							Primary Language : <select name = "primarylanguage">	
+													<option> Kannada </option>	
+													<option> English </option>	
+													<option> Hindi </option>														
+													<option> Telugu </option>
+													<option> Tamil </option>
+													<option> Others </option>
+												</select>
+							<br />
+							<br />
+						
+							Address: <input type = "text" placeholder = "Enter permanent address" style = "width:500px" name = "address" required>
+							<br />
+							<br />
+						
+							City: <input type = "text" name = "city" id = "cityplace" onblur = "cityFunction()" required>
+							<br />
+							<br />
+							
+							State: <input type = "text" name = "state" id = "stateplace" onblur = "stateFunction()" required>
+							<br />
+							<br />
+							
+							Country: <input type = "text" name = "country" id = "countryplace" onblur = "countryFunction()" required>
+							<br />
+							<br />
+							
+							Postal code: <input type = "text" name = "zipcode" maxlength = "10" id = "zip" onblur = "zipFunction()" required>
+							<br />
+							<br />
+						
+							Home Phone:	<input type = "text" value = "080" style = "width:50px"> - <input type = "text" maxlength = "15" name = "homephone" id = "homeph" onblur = "homephFunction()" optional>
+							<br />
+							<br />
+						
+							Work Phone: <input type = "text" name = "workphone" maxlength = "15" id = "workph" onblur = "workphFunction()" optional>
+							<br />
+							<br />
+						
+							Cell Phone: <input type = "text" value = "+91" style = "width:50px"> - <input type = "text" maxlength = "10" name = "cellphone" id = "cellph" onblur = "cellphFunction()" required>
+							<br />
+							<br />
+												
+							Employer: <input type = "text" name = "employer" id = "employername" onblur = "employerFunction()" optional>
+							<br />
+							<br />
+						
+							Occupation: <input type = "text" name = "occupation" id = "occupationtype" onblur = "occupationFunction()" optional>
+							<br />
+							<br />	
+							
+							Email ID: <input type = "email" id = "email" placeholder = "enter correct email address" name = "emailid" onblur = "validateEmail(this)" optional>
+							<br />
+							<br />
+							
+							Preferred Contact Method: <select multiple name = "contactmethod">
+														<option> Email </option>
+														<option> Cell Phone </option>
+														<option> Home Phone </option>
+														<option> Work Phone </option>
+														<option> Text Message </option>
+													</select>
+							<br />
+							<br />
+							
+							Consulting Doctor: <select name = "Dr.name">
+													<option>  Dr Arun Shet, M.D., AB (Hem/Onc)  </option>
+													<option> Dr Rishikesh Kumar, M.D. </option>
+													<option> Dr. Arun Mukesh </option>
+													<option> Dr. Veena shetty </option>
+													<option> Dr. Shelly </option>
+													<option> Dr. Vinod kumar </option>
+												</select>
+							<br />
+							<br />
+							
+							Emergency Contact Person: <select name = "emergencycontactperson">
+														<option> Father </option>
+														<option> Mother </option>
+														<option> Son </option>
+														<option> Daughter </option>	
+														<option> Brother </option>
+														<option> Sister </option>
+														<option> Husband </option>														
+														<option> Wife </option>														
+														<option> Other </option>														
+													</select>
+							<br />
+							<br />
+							
+							Emergency Contact Person Name: <input type = "text" placeholder = "enter name" name = "emergencycontactpersonname" id = "emergencyperson" onblur = "emergencypersonFunction()">
+							<br />
+							<br />
+							
+							Emergency contact Person Phone Number: <input type = "text" maxlength = "10" placeholder = "enter phone number" name = "emergencycontactpersonnumber" id = "emergencycontactpersonph" onblur = "emergencycontactpersonphFunction()" required>
+							<br />
+							<br />
+										
+							
+							<div style = "text-align:center">
+								<form>	
+									<button type = "Submit" name = "s1" value = "insert"> Submit </button>
+									<button type = "reset" value = "clear"> Clear </button>
+									<button type = "button"> <a href = "HomepageV1_1.html"> Back </a> </button>
+								</form>
+							</div>							
+				</fieldset>				
+			</form>
+			<footer>
+				<h5 style = "text-align:right"> 2016, Patient registration form, V1.7 </h5>
+			</footer>	
+
+			<!--script for alert message-->			
+		<script>
+			function firstnameFunction()
+			{
+				var valid = document.getElementById("firstname");
+				var x = valid.value.search(/^[A-Z]{1}[a-z]+$/);
+				if(x == 0)
+				{
+				}
+				else
+				{
+					alert("The firstname should not be empty and should have only alpha characters");					
+				}						
+			}
+			
+			function lastnameFunction()
+			{
+				var valid = document.getElementById("lastname");
+				var x = valid.value.search(/^[A-Z]{1}|[a-z]+$/);
+				if(x == 0)
+				{
+				}
+				else
+				{
+					alert("The lastname should not be empty and should have only alpha characters");					
+				}						
+			}
+			
+			function dateFunction()
+			{
+				var valid = document.getElementById("dob");				
+				var x = valid.value.search(/^(0[1-9]|1[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/([0-9]{4})$/);
+				var y = valid.value.search(/^(19[0-9]{2}|20[0-9]{2})$/);
+				if(x == 0)
+				{
+				}
+				else if(y == 0)
+				{
+				}
+				else 
+				{
+					alert("Date of birth should not be empty and should be farmat of DD/MM/YYYY");					
+				}						
+			}
+			
+			function ageFunction()
+			{
+				var valid = document.getElementById("agelimit");
+				var x = valid.value.search(/^([1-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]|6[0-9]|7[0-9]|8[0-9]|9[0-9]|10[0-9]{1}|11[0-9]{1}|12[0])$/);
+				if(x == 0)
+				{
+				}
+				else
+				{
+					alert("Age field should not be empty and it should have age range from 1 to 120");					
+				}						
+			}
+			
+			function cityFunction()
+			{
+				var valid = document.getElementById("cityplace");				
+				var x = valid.value.search(/^[A-Z]{1}[a-z\-\`\.\"\'\ ]+$/);
+				if(x == 0)
+				{
+				}
+				else
+				{
+					alert("city May be only alpha characters and first letter should be uppercase");					
+				}						
+			}
+			function stateFunction()
+			{
+				var valid = document.getElementById("stateplace");				
+				var x = valid.value.search(/^[A-Z]{1}[a-z\-\`\.\"\'\ ]+$/);
+				if(x == 0)
+				{
+				}
+				else
+				{
+					alert("state May be only alpha characters and first letter should be uppercase");					
+				}						
+			}
+			
+			function countryFunction()
+			{
+				var valid = document.getElementById("countryplace");				
+				var x = valid.value.search(/^[A-Z]{1}[a-z\-\`\.\"\'\ ]+$/);
+				if(x == 0)
+				{
+				}
+				else
+				{
+					alert("country May be only alpha characters and first letter should be uppercase");					
+				}						
+			}
+			
+			function zipFunction()
+			{
+				var valid = document.getElementById("zip");				
+				var x = valid.value.search(/^[0-9][0-9\-]+$/);
+				if(x == 0)
+				{
+				}
+				else
+				{
+					alert("zipcode should not be empty and may be of 10 digit only");					
+				}						
+			}
+			
+			function homephFunction()
+			{
+				var valid = document.getElementById("homeph");				
+				var x = valid.value.search(/^[0-9]{15}+$/);
+				if(x == 0)
+				{
+				}
+				else
+				{
+					alert("type valid home ph0ne number with std code");					
+				}						
+			}
+			
+			function workphFunction()
+			{
+				var valid = document.getElementById("workph");
+				var x = valid.value.search(/^[0-9]{15}+$/);					
+				if(x == 0)
+				{
+				}
+				else
+				{
+					alert("type valid work phone number");					
+				}						
+			}
+			
+			function cellphFunction()
+			{
+				var valid = document.getElementById("cellph");
+				var x = valid.value.search(/^[0-9]{10}+$/);
+				if(x == 0)
+				{
+				}
+				else
+				{
+					alert("type valid cell phone number with 10 digit");					
+				}						
+			}
+			
+			function employerFunction()
+			{
+				var valid = document.getElementById("employername");
+				var x = valid.value.search(/^[A-Za-z\ ]+$/);
+				if(x == 0)
+				{
+				}
+				else
+				{
+					alert("The currect employer name with space only");					
+				}						
+			}
+			
+			function occupationFunction()
+			{
+				var valid = document.getElementById("occupationtype");
+				var x = valid.value.search(/^[A-Za-z\ ]+$/);
+				if(x == 0)
+				{
+				}
+				else
+				{
+					alert("The occupation type should be currect");					
+				}						
+			}
+			
+			function validateEmail(emailField)
+			{
+				var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+				if (reg.test(emailField.value) == false) 				
+				{
+					alert("Invalid Email Address");					
+				}
+			}
+			
+			function emergencypersonFunction()
+			{
+				var valid = document.getElementById("emergencyperson");
+				var x = valid.value.search(/^[A-Za-z\ ]+$/);
+				if(x == 0)
+				{
+				}
+				else
+				{
+					alert("The emergency contact person name should not be null");					
+				}						
+			}
+			
+			function emergencycontactpersonphFunction()
+			{
+				var valid = document.getElementById("emergencycontactpersonph");
+				var x = valid.value.search(/^[0-9]{10}+$/);
+				if(x == 0)
+				{
+				}
+				else
+				{
+					alert("The emergency contact person ph number should not be null");					
+				}						
+			}			
+		</script>			
+	</body>
+</html>

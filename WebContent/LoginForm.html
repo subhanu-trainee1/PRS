@@ -1,0 +1,60 @@
+<DOCTYPE>
+<html>
+	<head>
+	<title> Login Form </title>
+	<style>
+			a:link
+			{
+				text-decoration:none;
+				color:black;				
+			}
+			a:hover
+			{
+				color:blue;
+				text-decoration:underline;
+			}	
+	</style>
+	<script>		
+		function validFunction()
+		{
+			var username = document.getElementById("usrname").value;
+			var password = document.getElementById("pwd").value;
+			if (username != "Hospital") 				
+			{
+				alert("Invalid username, enter correct username");
+				if (password != "Hospital") 				
+				{
+					alert("Invalid password, enter correct password");
+					return false;
+				}
+				return false;
+			}		
+			if (password != "Hospital") 				
+			{
+				alert("Invalid password, enter correct password");
+				return false;
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<h1 style = "color:Blue; text-align:center; margin-top:100px"> Hospital Management </h1>		
+	<h2 style = "color:Blue; text-align:center; margin-top:100px"> Login </h2>
+	<br />	
+	<form action="HomepageV1_1.html" style = "text-align:center" method="post" onsubmit = "return validFunction()">	
+		<h4 style = "color:Green">
+			Username: <input style = "width:300px; padding:5px; margin-left:3px" type="text" name="username" id = "usrname" placeholder = "enter correct user name" required >
+		</h4>			
+		<h4 style = "color:Green">
+			Password: <input style = "width:300px; padding:5px; margin-left:6px" type="password" name="password" id = "pwd" placeholder = "enter correct password" required >	
+		</h4>
+		<br />
+		<br />
+		<!-- <button type = "submit" name = "login" onclick = "validFunction()"> Login </button> --> 
+		<input type = "submit" name="login" value="Login"> </button>
+	</form>
+	
+	
+</body>
+</html>
